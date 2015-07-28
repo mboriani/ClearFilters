@@ -25,6 +25,7 @@ angular.module('ui.grid')
     initialize: function( $scope, grid ){
       grid.gridMenuScope = $scope;
       $scope.grid = grid;
+
       $scope.registeredMenuItems = [];
 
       // not certain this is needed, but would be bad to create a memory leak
@@ -189,6 +190,18 @@ angular.module('ui.grid')
           menuItems = menuItems.concat( $scope.grid.options.gridMenuCustomItems );
         }
       }
+
+      var clearFilters = [{
+        title: i18nService.getSafeText('gridMenu.clearAllFilters'),
+          action: function ($event) {
+        $scope.grid.clearAllFilters(undefined, true, undefined);
+      },
+        shown: function() {
+          return $scope.grid.options.enableFiltering;
+        },
+        order: 100
+      }];
+      menuItems = menuItems.concat( clearFilters );
 
       menuItems = menuItems.concat( $scope.registeredMenuItems );
 

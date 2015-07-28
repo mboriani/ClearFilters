@@ -550,7 +550,7 @@
               },
               shown: function() {
                 return this.grid.options.exporterMenuCsv &&
-                       ( this.grid.api.selection && this.grid.api.selection.getSelectedRows().length > 0 );
+                  ( this.grid.api.selection && this.grid.api.selection.getSelectedRows().length > 0 );
               },
               order: 202
             },
@@ -581,7 +581,7 @@
               },
               shown: function() {
                 return this.grid.options.exporterMenuPdf &&
-                       ( this.grid.api.selection && this.grid.api.selection.getSelectedRows().length > 0 );
+                  ( this.grid.api.selection && this.grid.api.selection.getSelectedRows().length > 0 );
               },
               order: 205
             }
@@ -679,7 +679,7 @@
 
           columns.forEach( function( gridCol, index ) {
             if ( gridCol.colDef.exporterSuppressExport !== true &&
-                 grid.options.exporterSuppressColumns.indexOf( gridCol.name ) === -1 ){
+              grid.options.exporterSuppressColumns.indexOf( gridCol.name ) === -1 ){
               headers.push({
                 name: gridCol.field,
                 displayName: grid.options.exporterHeaderFilter ? ( grid.options.exporterHeaderFilterUseName ? grid.options.exporterHeaderFilter(gridCol.name) : grid.options.exporterHeaderFilter(gridCol.displayName) ) : gridCol.displayName,
@@ -766,9 +766,9 @@
 
 
               columns.forEach( function( gridCol, index ) {
-              if ( (gridCol.visible || colTypes === uiGridExporterConstants.ALL ) &&
-                   gridCol.colDef.exporterSuppressExport !== true &&
-                   grid.options.exporterSuppressColumns.indexOf( gridCol.name ) === -1 ){
+                if ( (gridCol.visible || colTypes === uiGridExporterConstants.ALL ) &&
+                  gridCol.colDef.exporterSuppressExport !== true &&
+                  grid.options.exporterSuppressColumns.indexOf( gridCol.name ) === -1 ){
                   var extractedField = { value: grid.options.exporterFieldCallback( grid, row, gridCol, grid.getCellValue( row, gridCol ) ) };
                   if ( gridCol.colDef.exporterPdfAlign ) {
                     extractedField.alignment = gridCol.colDef.exporterPdfAlign;
@@ -858,7 +858,7 @@
          * @name isIE
          * @methodOf  ui.grid.exporter.service:uiGridExporterService
          * @description Checks whether current browser is IE and returns it's version if it is
-        */
+         */
         isIE: function () {
           var match = navigator.userAgent.match(/(?:MSIE |Trident\/.*; rv:)(\d+)/);
           return match ? parseInt(match[1]) : false;

@@ -103,7 +103,6 @@
           grid.selection.lastSelectedRow = null;
           grid.selection.selectAll = false;
 
-
           /**
            *  @ngdoc object
            *  @name selectedCount

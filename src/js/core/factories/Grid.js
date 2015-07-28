@@ -433,7 +433,7 @@ angular.module('ui.grid')
      * @param {object} clearFlags Defaults to false.
      * @returns {promise} If `refreshRows` is true, returns a promise of the rows refreshing.
      */
-    self.api.registerMethod('core', 'clearAllFilters', this.clearAllFilters);
+    self.api.registerMethod('core', 'cleanAllFilters', this.clearAllFilters);
 
     self.registerDataChangeCallback( self.columnRefreshCallback, [uiGridConstants.dataChange.COLUMN]);
     self.registerDataChangeCallback( self.processRowsCallback, [uiGridConstants.dataChange.EDIT]);
